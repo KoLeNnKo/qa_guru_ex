@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
+
 @pytest.fixture
 def driver():
     opts = Options()
@@ -17,11 +18,12 @@ def driver():
     driver.quit()
 
 
-def test_selenium_web(driver):
-    url = "https://www.selenium.dev/"
+def test_google_web(driver):
+    url = "https://www.google.com/"
     driver.get(url)
-    assert driver.title == "Selenium"
+    assert driver.title == "Google"
     assert driver.current_url == url
+
 
 # step 5
 print("Hello, README!")
